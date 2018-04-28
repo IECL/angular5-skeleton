@@ -6,11 +6,14 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 import {AppComponent} from './app.component';
+import {DataComponent} from './data/data.component';
+import {DataService} from './data/shared/data.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
@@ -22,8 +25,8 @@ import {AppComponent} from './app.component';
     BrowserAnimationsModule,
     FlexLayoutModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DataService], // name of the service required to pull data if any
+  bootstrap: [AppComponent]  // name of the component bootstrapping
 })
 export class AppModule {
 }

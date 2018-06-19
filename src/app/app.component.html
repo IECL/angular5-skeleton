@@ -25,17 +25,20 @@
 
 <mat-horizontal-stepper>
   <mat-step>
-    <ng-template matStepLabel>Extract from Basware</ng-template>
+    <ng-template matStepLabel>Upload Files</ng-template>
     <div fxLayout="row" fxLayoutAlign="center center">
-      <button mat-raised-button color="primary">Get Data from Basware</button>
+      <button mat-raised-button color="primary" (click)="OnButtonClick()">Upload Files</button>
     </div>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Cleanse the data</ng-template>
-    <app-data></app-data>
+    <ng-template matStepLabel>OCR via Tesseract</ng-template>
+  <!--  <app-data></app-data>-->
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Get data from BPCS</ng-template>
+    <ng-template matStepLabel>Get Transactions</ng-template>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Attach to one transaction</ng-template>
   </mat-step>
   <div>
     <button mat-button matStepperPrevious>Back</button>
@@ -43,3 +46,12 @@
   </div>
 </mat-horizontal-stepper>
 
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+
+<pre>{{ocrReading}}</pre>
+
+<label>Suggested FileName:</label><b>{{fileName}}</b>
+
+<div fxLayout="row" fxLayoutAlign="center center">
+  <button mat-raised-button color="primary" (click)="GetTransactions()">Get Xero Transactions</button>
+</div>

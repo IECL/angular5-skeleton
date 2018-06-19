@@ -9,7 +9,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {AppComponent} from './app.component';
 import {DataComponent} from './data/data.component';
 import {DataService} from './data/shared/data.service';
-import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -27,8 +26,6 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatProgressBarModule
-
-    HttpClientModule
   ],
   providers: [DataService], // name of the service required to pull data if any
   bootstrap: [AppComponent]  // name of the component bootstrapping
